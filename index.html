@@ -7,6 +7,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <title>Connor Overby - Web Developer</title>
   </head>
   <body>
@@ -27,7 +31,12 @@
     </section>
     <section class="section-contact-form">
       <div class="contact-form-container">
-        <!--CALL TO ACTION/CONTACT FORM-->
+        <form action="submit">
+          <input type="text" name="user-name" placeholder="Your Name" />
+          <input type="text" name="user-email" placeholder="Your Email" />
+          <textarea name="user-message" id="contact-message"></textarea>
+          <input type="submit" />
+        </form>
       </div>
     </section>
     <section class="section-footer">
