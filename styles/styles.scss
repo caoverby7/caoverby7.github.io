@@ -6,6 +6,7 @@
  * WRAPPERS
  * ANIMATIONS
  */
+
 /* 
 
 
@@ -13,6 +14,7 @@
 
 
 */
+
 html,
 body,
 div,
@@ -150,6 +152,10 @@ table {
 
 
 */
+
+$font-size: 18px;
+$h1-size: $font-size * 2;
+
 /* 
 
 
@@ -157,6 +163,7 @@ table {
 
 
 */
+
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
@@ -168,6 +175,7 @@ body {
 
 
 */
+
 h1,
 h2,
 h3,
@@ -178,13 +186,12 @@ h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: $h1-size;
 }
 
 h2 {
-  font-size: 27px;
+  font-size: $font-size * 1.5;
 }
-
 /*
 
 
@@ -192,39 +199,30 @@ h2 {
 
 
 */
+
 .section-masthead {
   width: 100vw;
   height: 100vh;
   background-image: url("../assets/fractal.png");
   background-repeat: no-repeat;
-}
-
-.section-masthead .masthead-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.section-masthead .masthead-container .masthead-title {
-  padding-top: 15vh;
-  padding-left: 5vw;
-  font-weight: bolder;
-  font-size: 90px;
-  color: #ffffff;
-}
-
-.section-masthead .masthead-container .masthead-subtitle {
-  padding-left: 5vw;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 72px;
-  color: #ffffff;
+  .masthead-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    .masthead-title {
+      padding-top: 15vh;
+      padding-left: 5vw;
+      font-weight: bolder;
+      font-size: $font-size * 5;
+      color: #ffffff;
+    }
+    .masthead-subtitle {
+      padding-left: 5vw;
+      font-family: "Open Sans", Arial, Helvetica, sans-serif;
+      font-size: $font-size * 4;
+      color: #ffffff;
+    }
+  }
 }
 
 /*
@@ -234,39 +232,23 @@ ANIMATIONS
 
 
 */
+
 .typewriter-initial {
   overflow: hidden;
-  border-right: 0.05em solid orange;
-  /* The typwriter cursor */
-  white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  border-right: 0.05em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .typewriter-secondary {
   overflow: hidden;
-  border-right: 0.05em solid orange;
-  /* The typwriter cursor */
-  white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  border-right: 0.05em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
-
 /* The typing effect */
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
 @keyframes typing {
   from {
     width: 0;
@@ -277,15 +259,6 @@ ANIMATIONS
 }
 
 /* The typewriter cursor effect */
-@-webkit-keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-}
 @keyframes blink-caret {
   from,
   to {
@@ -295,4 +268,3 @@ ANIMATIONS
     border-color: orange;
   }
 }
-/*# sourceMappingURL=styles.css.map */
