@@ -153,7 +153,7 @@ table {
 
 */
 
-$font-size: 18px;
+$font-size: 1vw;
 $h1-size: $font-size * 2;
 
 /* 
@@ -166,6 +166,7 @@ $h1-size: $font-size * 2;
 
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #ebebeb;
 }
 
 /* 
@@ -207,20 +208,21 @@ h2 {
   background-repeat: no-repeat;
   .masthead-container {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    .masthead-title {
+    justify-content: left;
+    #masthead-text {
       padding-top: 15vh;
       padding-left: 5vw;
-      font-weight: bolder;
-      font-size: $font-size * 5;
-      color: #ffffff;
-    }
-    .masthead-subtitle {
-      padding-left: 5vw;
-      font-family: "Open Sans", Arial, Helvetica, sans-serif;
-      font-size: $font-size * 4;
-      color: #ffffff;
+      max-height: 8vh;
+      .masthead-title {
+        font-weight: bolder;
+        font-size: $font-size * 5;
+        color: #ebebeb;
+      }
+      .masthead-subtitle {
+        font-family: "Open Sans", Arial, Helvetica, sans-serif;
+        font-size: $font-size * 4;
+        color: #ebebeb;
+      }
     }
   }
 }
@@ -235,36 +237,57 @@ ANIMATIONS
 
 .typewriter-initial {
   overflow: hidden;
-  border-right: 0.05em solid orange; /* The typwriter cursor */
+  border-right: 0.05em solid #e68a12; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing-title 3s steps(15, end) forwards, blink-caret .8s forwards 10;
 }
 
 .typewriter-secondary {
   overflow: hidden;
-  border-right: 0.05em solid orange; /* The typwriter cursor */
+  border-right: 0.05em solid #e68a12; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 5s steps(40, end) forwards, blink-caret .8s forwards 15;
 }
 /* The typing effect */
-@keyframes typing {
-  from {
+@keyframes typing-title {
+  0% {
+    opacity: 100%;
     width: 0;
   }
-  to {
+  45% {
     width: 100%;
   }
+  90% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
-
+@keyframes typing {
+  0% {
+    opacity: 100%;
+    width: 0;
+  }
+  55% {
+    width: 100%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  99% {
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
     border-color: transparent;
   }
-  50% {
-    border-color: orange;
+  100% {
+    border-color: #e68a12;
   }
 }

@@ -159,6 +159,7 @@ table {
 */
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #ebebeb;
 }
 
 /* 
@@ -178,11 +179,11 @@ h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2vw;
 }
 
 h2 {
-  font-size: 27px;
+  font-size: 1.5vw;
 }
 
 /*
@@ -203,28 +204,27 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
-.section-masthead .masthead-container .masthead-title {
+.section-masthead .masthead-container #masthead-text {
   padding-top: 15vh;
   padding-left: 5vw;
-  font-weight: bolder;
-  font-size: 90px;
-  color: #ffffff;
+  max-height: 8vh;
 }
 
-.section-masthead .masthead-container .masthead-subtitle {
-  padding-left: 5vw;
+.section-masthead .masthead-container #masthead-text .masthead-title {
+  font-weight: bolder;
+  font-size: 5vw;
+  color: #ebebeb;
+}
+
+.section-masthead .masthead-container #masthead-text .masthead-subtitle {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 72px;
-  color: #ffffff;
+  font-size: 4vw;
+  color: #ebebeb;
 }
 
 /*
@@ -236,43 +236,89 @@ ANIMATIONS
 */
 .typewriter-initial {
   overflow: hidden;
-  border-right: 0.05em solid orange;
+  border-right: 0.05em solid #e68a12;
   /* The typwriter cursor */
   white-space: nowrap;
   /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  -webkit-animation: typing-title 3s steps(15, end) forwards, blink-caret 0.8s forwards 10;
+          animation: typing-title 3s steps(15, end) forwards, blink-caret 0.8s forwards 10;
 }
 
 .typewriter-secondary {
   overflow: hidden;
-  border-right: 0.05em solid orange;
+  border-right: 0.05em solid #e68a12;
   /* The typwriter cursor */
   white-space: nowrap;
   /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  -webkit-animation: typing 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
+          animation: typing 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
 }
 
 /* The typing effect */
-@-webkit-keyframes typing {
-  from {
+@-webkit-keyframes typing-title {
+  0% {
+    opacity: 100%;
     width: 0;
   }
-  to {
+  45% {
     width: 100%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 0%;
   }
 }
-@keyframes typing {
-  from {
+@keyframes typing-title {
+  0% {
+    opacity: 100%;
     width: 0;
   }
-  to {
+  45% {
     width: 100%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@-webkit-keyframes typing {
+  0% {
+    opacity: 100%;
+    width: 0;
+  }
+  55% {
+    width: 100%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  99% {
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes typing {
+  0% {
+    opacity: 100%;
+    width: 0;
+  }
+  55% {
+    width: 100%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  99% {
+  }
+  100% {
+    opacity: 0%;
   }
 }
 
@@ -282,8 +328,8 @@ ANIMATIONS
   to {
     border-color: transparent;
   }
-  50% {
-    border-color: orange;
+  100% {
+    border-color: #e68a12;
   }
 }
 @keyframes blink-caret {
@@ -291,8 +337,8 @@ ANIMATIONS
   to {
     border-color: transparent;
   }
-  50% {
-    border-color: orange;
+  100% {
+    border-color: #e68a12;
   }
 }
 /*# sourceMappingURL=styles.css.map */
