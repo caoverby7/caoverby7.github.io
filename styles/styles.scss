@@ -164,9 +164,9 @@ $h1-size: $font-size * 2;
 
 */
 
-body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  color: #ebebeb;
+p {
+  font-weight: lighter;
+  font-size: $font-size;
 }
 
 /* 
@@ -187,10 +187,12 @@ h6 {
 }
 
 h1 {
+  font-weight: bolder;
   font-size: $h1-size;
 }
 
 h2 {
+  font-weight: bolder;
   font-size: $font-size * 1.5;
 }
 /*
@@ -207,6 +209,8 @@ body {
   background-color: #000000;
   background-image: url("../assets/fractal.png");
   background-repeat: no-repeat;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #ebebeb;
   .masthead-container {
     display: flex;
     justify-content: left;
@@ -220,7 +224,6 @@ body {
         color: #ebebeb;
       }
       .masthead-subtitle {
-        font-family: "Open Sans", Arial, Helvetica, sans-serif;
         font-size: $font-size * 4;
         font-weight: bolder;
         color: #ebebeb;
@@ -238,7 +241,39 @@ body {
     .clicked-nav {
       font-size: $font-size * 1.5;
       text-decoration: underline;
+      transition: font-size .5s;
     }
+  }
+  .center-section {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-text {
+    font-size: $font-size * 2;
+    color: #ebebeb;
+    line-height: $font-size * 4;
+    text-shadow: 2px 2px #000000;
+  }
+  .section-container {
+    max-width: 60vw;
+    max-height: 70vh;
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding: 2vw;
+    border-radius: 5vw;
+    background-color: #97979750;
+  }
+  .invisible {
+    display: none;
+  }
+  .visible {
+    display: block;
+  }
+  .section-title {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
   }
 }
 
