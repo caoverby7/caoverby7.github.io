@@ -201,15 +201,16 @@ h2 {
 
 */
 
-.section-masthead {
+body {
   width: 100vw;
   height: 100vh;
+  background-color: #000000;
   background-image: url("../assets/fractal.png");
   background-repeat: no-repeat;
   .masthead-container {
     display: flex;
     justify-content: left;
-    #masthead-text {
+    .masthead-text {
       padding-top: 15vh;
       padding-left: 5vw;
       max-height: 8vh;
@@ -221,11 +222,26 @@ h2 {
       .masthead-subtitle {
         font-family: "Open Sans", Arial, Helvetica, sans-serif;
         font-size: $font-size * 4;
+        font-weight: bolder;
         color: #ebebeb;
       }
     }
   }
+  nav {
+    max-width: 45vw;
+    padding-top: 3vh;
+    font-size: $font-size * 1.25;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-around;
+    color: #ebebeb;
+    .clicked-nav {
+      font-size: $font-size * 1.5;
+      text-decoration: underline;
+    }
+  }
 }
+
 
 /*
 
@@ -246,8 +262,13 @@ ANIMATIONS
   overflow: hidden;
   border-right: 0.05em solid #e68a12; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  animation: typing 5s steps(40, end) forwards, blink-caret .8s forwards 15;
+  animation: typing-subtitle 5s steps(40, end) forwards, blink-caret .8s forwards 15;
 }
+
+.nav-fade-in {
+  animation: fade-in 2s ease-out forwards;
+}
+
 /* The typing effect */
 @keyframes typing-title {
   0% {
@@ -264,7 +285,8 @@ ANIMATIONS
     opacity: 0%;
   }
 }
-@keyframes typing {
+
+@keyframes typing-subtitle {
   0% {
     opacity: 100%;
     width: 0;
@@ -289,5 +311,14 @@ ANIMATIONS
   }
   100% {
     border-color: #e68a12;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }

@@ -193,14 +193,15 @@ h2 {
 
 
 */
-.section-masthead {
+body {
   width: 100vw;
   height: 100vh;
+  background-color: #000000;
   background-image: url("../assets/fractal.png");
   background-repeat: no-repeat;
 }
 
-.section-masthead .masthead-container {
+body .masthead-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -209,22 +210,41 @@ h2 {
           justify-content: left;
 }
 
-.section-masthead .masthead-container #masthead-text {
+body .masthead-container .masthead-text {
   padding-top: 15vh;
   padding-left: 5vw;
   max-height: 8vh;
 }
 
-.section-masthead .masthead-container #masthead-text .masthead-title {
+body .masthead-container .masthead-text .masthead-title {
   font-weight: bolder;
   font-size: 5vw;
   color: #ebebeb;
 }
 
-.section-masthead .masthead-container #masthead-text .masthead-subtitle {
+body .masthead-container .masthead-text .masthead-subtitle {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 4vw;
+  font-weight: bolder;
   color: #ebebeb;
+}
+
+body nav {
+  max-width: 45vw;
+  padding-top: 3vh;
+  font-size: 1.25vw;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #ebebeb;
+}
+
+body nav .clicked-nav {
+  font-size: 1.5vw;
+  text-decoration: underline;
 }
 
 /*
@@ -250,8 +270,13 @@ ANIMATIONS
   /* The typwriter cursor */
   white-space: nowrap;
   /* Keeps the content on a single line */
-  -webkit-animation: typing 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
-          animation: typing 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
+  -webkit-animation: typing-subtitle 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
+          animation: typing-subtitle 5s steps(40, end) forwards, blink-caret 0.8s forwards 15;
+}
+
+.nav-fade-in {
+  -webkit-animation: fade-in 2s ease-out forwards;
+          animation: fade-in 2s ease-out forwards;
 }
 
 /* The typing effect */
@@ -286,7 +311,7 @@ ANIMATIONS
   }
 }
 
-@-webkit-keyframes typing {
+@-webkit-keyframes typing-subtitle {
   0% {
     opacity: 100%;
     width: 0;
@@ -304,7 +329,7 @@ ANIMATIONS
   }
 }
 
-@keyframes typing {
+@keyframes typing-subtitle {
   0% {
     opacity: 100%;
     width: 0;
@@ -339,6 +364,24 @@ ANIMATIONS
   }
   100% {
     border-color: #e68a12;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
