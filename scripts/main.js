@@ -149,12 +149,19 @@ RESUME SECTIONS
 */
 
 let skillSection = document.createElement("DIV");
+let innerContainer = document.createElement("DIV");
 let skillContainer = document.createElement("OL");
 let skillNode = document.createElement("LI");
 let skillHTML = document.createElement("LI");
 let skillCSS = document.createElement("LI");
 let skillJS = document.createElement("LI");
 let skillCPP = document.createElement("LI");
+let yearContainer = document.createElement("OL");
+let nodeYear = document.createElement("LI");
+let HTMLYear = document.createElement("LI");
+let CSSYear = document.createElement("LI");
+let JSYear = document.createElement("LI");
+let CPPYear = document.createElement("LI");
 skillNode.innerText = "NodeJS / NPM / Yarn";
 skillHTML.innerText = "HTML";
 skillCSS.innerText = "CSS / SASS / SCSS";
@@ -165,9 +172,17 @@ skillContainer.appendChild(skillHTML);
 skillContainer.appendChild(skillCSS);
 skillContainer.appendChild(skillJS);
 skillContainer.appendChild(skillCPP);
-skillSection.appendChild(skillContainer);
-skillContainer.classList.add("section-text", "section-container", "center-section");
-skillSection.classList.add("invisible");
+innerContainer.appendChild(skillContainer);
+nodeYear.innerText = "2 Years";
+HTMLYear.innerText = "3 Years";
+CSSYear.innerText = "3 Years";
+JSYear.innerText = "2 Years";
+CPPYear.innerText = "1 Year";
+yearContainer.innerHTML += nodeYear.outerHTML + HTMLYear.outerHTML + CSSYear.outerHTML + JSYear.outerHTML + CPPYear.outerHTML;
+innerContainer.appendChild(yearContainer);
+skillSection.appendChild(innerContainer);
+innerContainer.classList.add("skill-section")
+skillSection.classList.add("section-text", "section-container", "invisible");
 
 
 let experienceSection = document.createElement("DIV");
@@ -215,14 +230,22 @@ educationSection.classList.add("section-text", "section-container", "invisible")
 
 
 let contactSection = document.createElement("DIV");
-let name = document.createElement("H2");
-let email = document.createElement("H2");
-let phone = document.createElement("H2");
+let contactContainer = document.createElement("OL");
+let name = document.createElement("LI");
+let email = document.createElement("LI");
+let phone = document.createElement("LI");
+let anchorContainer = document.createElement("LI");
 let indeed = document.createElement("A");
 name.innerText = "Connor Overby";
 email.innerText = "caoverby7@gmail.com";
 phone.innerText = "417-841-7806";
-contactSection.appendChild(name);
-contactSection.appendChild(email);
-contactSection.appendChild(phone);
-contactSection.classList.add("section-text", "section-container", "invisible", "center-section");
+indeed.href = "https://my.indeed.com/p/connoro-rdt2xof";
+indeed.innerText = "Resumé";
+contactContainer.appendChild(name);
+contactContainer.appendChild(email);
+contactContainer.appendChild(phone);
+anchorContainer.appendChild(indeed);
+contactContainer.appendChild(anchorContainer);
+contactSection.appendChild(contactContainer);
+contactSection.classList.add("section-text", "section-container", "invisible");
+contactContainer.classList.add("contact-section");
