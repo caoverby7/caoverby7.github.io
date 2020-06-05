@@ -42,7 +42,7 @@ MASTHEAD SECTION
 
 let mastheadContainer = document.createElement("DIV");
 let titleContainer = document.createElement("DIV");
-let container = document.createElement("h1");
+let container = document.createElement("H1");
 let titleText = document.createTextNode("Hi, I'm Connor");
 let subContainer = document.createElement("H1");
 let subText = document.createTextNode("I'm a Front-End Web Developer");
@@ -148,6 +148,7 @@ RESUME SECTIONS
 
 */
 
+/* SKILL SECTION */
 let skillSection = document.createElement("DIV");
 let innerContainer = document.createElement("DIV");
 let skillContainer = document.createElement("OL");
@@ -167,24 +168,20 @@ skillHTML.innerText = "HTML";
 skillCSS.innerText = "CSS / SASS / SCSS";
 skillJS.innerText = "Javascript";
 skillCPP.innerText = "C++";
-skillContainer.appendChild(skillNode);
-skillContainer.appendChild(skillHTML);
-skillContainer.appendChild(skillCSS);
-skillContainer.appendChild(skillJS);
-skillContainer.appendChild(skillCPP);
-innerContainer.appendChild(skillContainer);
 nodeYear.innerText = "2 Years";
 HTMLYear.innerText = "3 Years";
 CSSYear.innerText = "3 Years";
 JSYear.innerText = "2 Years";
 CPPYear.innerText = "1 Year";
-yearContainer.innerHTML += nodeYear.outerHTML + HTMLYear.outerHTML + CSSYear.outerHTML + JSYear.outerHTML + CPPYear.outerHTML;
-innerContainer.appendChild(yearContainer);
+skillContainer.append(skillNode, skillHTML, skillCSS, skillJS, skillCPP);
+yearContainer.append(nodeYear, HTMLYear, CSSYear, JSYear, CPPYear);
+innerContainer.append(skillContainer, yearContainer);
 skillSection.appendChild(innerContainer);
 innerContainer.classList.add("skill-section")
 skillSection.classList.add("section-text", "section-container", "invisible");
 
 
+/* EXPERIENCE SECTION */
 let experienceSection = document.createElement("DIV");
 let jobOneContainer = document.createElement("DIV");
 let jobTwoContainer = document.createElement("DIV");
@@ -196,17 +193,15 @@ jobTitleOne.innerText = "01/2018 to Current | Missouri State University | Full-T
 jobTitleTwo.innerText = "01/2018 to 05/2018 | ADsmith Marketing | Digital Coordinator"
 jobDescOne.innerText = "Completing a Bachelors of Science in Computer Science as well as a certificate of Web Development."
 jobDescTwo.innerText = "In charge of SEO and SEM actions on behalf of multiple clients and websites. Composed blogs and social media posts based upon keyword research for clients. Performed maintenance on client's websites varying from repairing broken links and site maps to modifying CSS and HTML where necessary."
-jobOneContainer.appendChild(jobTitleOne);
-jobOneContainer.appendChild(jobDescOne);
-jobTwoContainer.appendChild(jobTitleTwo);
-jobTwoContainer.appendChild(jobDescTwo);
-experienceSection.appendChild(jobOneContainer);
-experienceSection.appendChild(jobTwoContainer);
 jobTitleOne.className = "section-title";
 jobTitleTwo.className = "section-title";
+jobOneContainer.append(jobTitleOne, jobDescOne);
+jobTwoContainer.append(jobTitleTwo, jobDescTwo);
+experienceSection.append(jobOneContainer, jobTwoContainer);
 experienceSection.classList.add("section-text", "section-container", "invisible");
 
 
+/* EDUCATION SECTION */
 let educationSection = document.createElement("DIV");
 let eduOneContainer = document.createElement("DIV");
 let eduTwoContainer = document.createElement("DIV");
@@ -218,17 +213,15 @@ eduOneTitle.innerText = "2021 | Missouri State University | Bachelor of Science:
 eduTwoTitle.innerText = "2014 | Springfield Central High School | High School Diploma";
 eduOneDesc.innerText = "• Minor in Chemistry \n• Certificate in Web Development";
 eduTwoDesc.innerText = "• Received International Baccalaureate Certificate";
-eduOneContainer.appendChild(eduOneTitle);
-eduOneContainer.appendChild(eduOneDesc);
-eduTwoContainer.appendChild(eduTwoTitle);
-eduTwoContainer.appendChild(eduTwoDesc);
-educationSection.appendChild(eduOneContainer);
-educationSection.appendChild(eduTwoContainer);
 eduOneTitle.className = "section-title";
 eduTwoTitle.className = "section-title";
+eduOneContainer.append(eduOneTitle, eduOneDesc);
+eduTwoContainer.append(eduTwoTitle, eduTwoDesc);
+educationSection.append(eduOneContainer, eduTwoContainer);
 educationSection.classList.add("section-text", "section-container", "invisible");
 
 
+/* CONTACT SECTION */
 let contactSection = document.createElement("DIV");
 let contactContainer = document.createElement("OL");
 let name = document.createElement("LI");
@@ -241,11 +234,8 @@ email.innerText = "caoverby7@gmail.com";
 phone.innerText = "417-841-7806";
 indeed.href = "https://my.indeed.com/p/connoro-rdt2xof";
 indeed.innerText = "Resumé";
-contactContainer.appendChild(name);
-contactContainer.appendChild(email);
-contactContainer.appendChild(phone);
 anchorContainer.appendChild(indeed);
-contactContainer.appendChild(anchorContainer);
+contactContainer.append(name, email, phone, anchorContainer);
 contactSection.appendChild(contactContainer);
 contactSection.classList.add("section-text", "section-container", "invisible");
 contactContainer.classList.add("contact-section");
